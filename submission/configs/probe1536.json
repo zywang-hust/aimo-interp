@@ -1,0 +1,30 @@
+{
+ "readers": [
+  "skywork-or1-7b__default"
+ ],
+ "z_thr": 0.4063913243787506,
+ "beta": 1.0,
+ "weakness": {
+  "qwen3.5-4b__default": -0.7297410169272632,
+  "skywork-or1-7b__default": 0.9965299863302575,
+  "olmo3-7b-think__default": 0.6165511783919634,
+  "dsr1-qwen3-8b__default": 0.16333412019119053,
+  "gpt-oss-120b__low": 1.3104410099653698,
+  "gpt-oss-120b__medium": -0.6436086756212495,
+  "gpt-oss-120b__high": -1.7135066023302725
+ },
+ "note": "z_thr = median combined z over the 21 public-validation cases (submission 1000206 log)",
+ "rollout": {
+  "effort": "medium",
+  "batch": 12,
+  "max_new": 1536,
+  "wall": 110,
+  "guard_s": 3300,
+  "seed": 0,
+  "feature": "probe",
+  "feat_layer": 18,
+  "c": 0.1,
+  "thr": 8.3144,
+  "note": "score = mean est. log length of 12 gpt-oss medium samples cut at 1536 (unfinished ones at the probe.npz prediction, not below log 1536) + c*weakness; thr from bench/scripts/fit_probe_rule.py (n=12, all official rows, pooled over eval-time sampling noise)"
+ }
+}

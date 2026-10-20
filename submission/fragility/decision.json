@@ -1,0 +1,30 @@
+{
+ "readers": [
+  "skywork-or1-7b__default"
+ ],
+ "z_thr": 0.4063913243787506,
+ "beta": 1.0,
+ "weakness": {
+  "qwen3.5-4b__default": -0.7297410169272632,
+  "skywork-or1-7b__default": 0.9965299863302575,
+  "olmo3-7b-think__default": 0.6165511783919634,
+  "dsr1-qwen3-8b__default": 0.16333412019119053,
+  "gpt-oss-120b__low": 1.3104410099653698,
+  "gpt-oss-120b__medium": -0.6436086756212495,
+  "gpt-oss-120b__high": -1.7135066023302725
+ },
+ "note": "z_thr = median combined z over the 21 public-validation cases (submission 1000206 log)",
+ "rollout": {
+  "effort": "medium",
+  "batch": 12,
+  "max_new": 3072,
+  "wall": 150,
+  "guard_s": 3300,
+  "seed": 0,
+  "feature": "loglen",
+  "c": 0.1,
+  "twin": 0.4,
+  "thr": 7.9501,
+  "note": "score = mean log length of 12 gpt-oss medium samples capped at 3072 + c*weakness + twin*is_twin; thr from bench/scripts/fit_probe_rule.py --fit cap 12 3072 0.4 (all official rows, pooled over eval-time sampling noise)"
+ }
+}

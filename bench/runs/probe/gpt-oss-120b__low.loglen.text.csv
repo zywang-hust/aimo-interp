@@ -1,0 +1,18 @@
+model_id,reasoning_effort,problem,is_robust,max_drop,pid,pred
+openai/gpt-oss-120b,low,Triangle $ABC$ has side length $AB = 20$ and circumradius $R = 26$. Let $D$ be the foot of the perpendicular from $C$ to the line $AB$. What is the greatest possible length of segment $CD$?,1.0,-0.05,49981d06,7.066334718011971
+openai/gpt-oss-120b,low,"Alice writes all positive integers from $1$ to $n$ on the board for some positive integer $n \geq 11$. 
+Bob then erases ten of them. The mean of the remaining numbers is $3000/37$. 
+The sum of the numbers Bob erased is $S$. 
+What is the remainder when $n \times S$ is divided by $997$?",1.0,-0.01,381c5826,6.918679180976176
+openai/gpt-oss-120b,low,Find the sum of all integer bases $b>9$ for which $17_b$ is a divisor of $97_b.$,1.0,0.02,4bd31ff2,7.348935034871567
+openai/gpt-oss-120b,low,"An isosceles trapezoid has an inscribed circle tangent to each of its four sides. The radius of the circle is $3$, and the area of the trapezoid is $72$. Let the parallel sides of the trapezoid have lengths $r$ and $s$, with $r \neq s$. Find $r^2+s^2$",1.0,0.04,1c053a12,7.070563117785679
+openai/gpt-oss-120b,low,"Alice and Bob are each holding some integer number of sweets. Alice says to Bob: ``If we each added the number of sweets we're holding to our (positive integer) age, my answer would be double yours. If we took the product, then my answer would be four times yours.'' Bob replies: ``Why don't you give me five of your sweets because then both our sum and product would be equal.'' What is the product of Alice and Bob's ages?",1.0,0.07,4fb5cc7c,6.860590218858997
+openai/gpt-oss-120b,low,"Let $k$ be a real number such that the system
+\begin{align*} |25+20i-z|&=5\\ |z-4-k|&=|z-3i-k| \\ \end{align*}
+has exactly one complex solution $z$. The sum of all possible values of $k$ can be written as $\frac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$ Here $i=\sqrt{-1}.$",,0.15,60bbea97,7.313421635073326
+openai/gpt-oss-120b,low,"Let $\triangle ABC$ be a triangle with $D$ on $\overline{BC}$ such that $\overline{AD}$ bisects $\angle BAC.$ Let $\omega$ be the circle that passes through $A$ and is tangent to segment $\overline{BC}$ at $D.$ Let $E \neq A$ and $F \neq A$ be the intersections of $\omega$ with segments $\overline{AB}$ and $\overline{AC},$ respectively. Suppose that $AB = 200, AC = 225,$ and all of $AE, AF, BD,$ and $CD$ are positive integers. Find the sum of all possible values of $BC.$",0.0,0.25,9fc9278a,7.087058306097697
+openai/gpt-oss-120b,low,"Let $S$ denote the value of the infinite sum
+\[
+\frac{1}{9} + \frac{1}{99} + \frac{1}{999} + \frac{1}{9999}  + \cdots
+\]
+Find the remainder when the greatest integer less than or equal to $10^{100} S$ is divided by $1000.$",0.0,0.43,34f58ec1,7.35505882728836

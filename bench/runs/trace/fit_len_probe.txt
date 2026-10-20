@@ -1,0 +1,56 @@
+bench traces 5904 of 5904 (738 problems)
+T=  512 L=12 k= 32: alive  5882 CV R2 0.266 rmse 0.651
+T=  512 L=12 k= 64: alive  5882 CV R2 0.356 rmse 0.609
+T=  512 L=12 k=128: alive  5882 CV R2 0.392 rmse 0.592
+T=  512 L=18 k= 32: alive  5882 CV R2 0.317 rmse 0.628
+T=  512 L=18 k= 64: alive  5882 CV R2 0.364 rmse 0.605
+T=  512 L=18 k=128: alive  5882 CV R2 0.424 rmse 0.576
+T=  512 L=24 k= 32: alive  5882 CV R2 0.244 rmse 0.660
+T=  512 L=24 k= 64: alive  5882 CV R2 0.308 rmse 0.632
+T=  512 L=24 k=128: alive  5882 CV R2 0.382 rmse 0.597
+T= 1024 L=12 k= 32: alive  5680 CV R2 0.357 rmse 0.568
+T= 1024 L=12 k= 64: alive  5680 CV R2 0.404 rmse 0.547
+T= 1024 L=12 k=128: alive  5680 CV R2 0.439 rmse 0.530
+T= 1024 L=18 k= 32: alive  5680 CV R2 0.379 rmse 0.558
+T= 1024 L=18 k= 64: alive  5680 CV R2 0.417 rmse 0.541
+T= 1024 L=18 k=128: alive  5680 CV R2 0.449 rmse 0.525
+T= 1024 L=24 k= 32: alive  5680 CV R2 0.344 rmse 0.573
+T= 1024 L=24 k= 64: alive  5680 CV R2 0.370 rmse 0.562
+T= 1024 L=24 k=128: alive  5680 CV R2 0.410 rmse 0.544
+T= 1536 L=12 k= 32: alive  5228 CV R2 0.356 rmse 0.509
+T= 1536 L=12 k= 64: alive  5228 CV R2 0.383 rmse 0.499
+T= 1536 L=12 k=128: alive  5228 CV R2 0.419 rmse 0.484
+T= 1536 L=18 k= 32: alive  5228 CV R2 0.366 rmse 0.506
+T= 1536 L=18 k= 64: alive  5228 CV R2 0.394 rmse 0.494
+T= 1536 L=18 k=128: alive  5228 CV R2 0.416 rmse 0.485
+T= 1536 L=24 k= 32: alive  5228 CV R2 0.345 rmse 0.514
+T= 1536 L=24 k= 64: alive  5228 CV R2 0.359 rmse 0.508
+T= 1536 L=24 k=128: alive  5228 CV R2 0.380 rmse 0.500
+T= 2048 L=12 k= 32: alive  4751 CV R2 0.359 rmse 0.463
+T= 2048 L=12 k= 64: alive  4751 CV R2 0.402 rmse 0.447
+T= 2048 L=12 k=128: alive  4751 CV R2 0.421 rmse 0.440
+T= 2048 L=18 k= 32: alive  4751 CV R2 0.365 rmse 0.461
+T= 2048 L=18 k= 64: alive  4751 CV R2 0.400 rmse 0.448
+T= 2048 L=18 k=128: alive  4751 CV R2 0.417 rmse 0.442
+T= 2048 L=24 k= 32: alive  4751 CV R2 0.341 rmse 0.470
+T= 2048 L=24 k= 64: alive  4751 CV R2 0.362 rmse 0.462
+T= 2048 L=24 k=128: alive  4751 CV R2 0.387 rmse 0.453
+T= 3072 L=12 k= 32: alive  3781 CV R2 0.332 rmse 0.400
+T= 3072 L=12 k= 64: alive  3781 CV R2 0.353 rmse 0.394
+T= 3072 L=12 k=128: alive  3781 CV R2 0.373 rmse 0.388
+T= 3072 L=18 k= 32: alive  3781 CV R2 0.331 rmse 0.401
+T= 3072 L=18 k= 64: alive  3781 CV R2 0.356 rmse 0.393
+T= 3072 L=18 k=128: alive  3781 CV R2 0.370 rmse 0.389
+T= 3072 L=24 k= 32: alive  3781 CV R2 0.303 rmse 0.409
+T= 3072 L=24 k= 64: alive  3781 CV R2 0.324 rmse 0.403
+T= 3072 L=24 k=128: alive  3781 CV R2 0.336 rmse 0.399
+T= 4096 L=12 k= 32: alive  2983 CV R2 0.323 rmse 0.353
+T= 4096 L=12 k= 64: alive  2983 CV R2 0.361 rmse 0.343
+T= 4096 L=12 k=128: alive  2983 CV R2 0.371 rmse 0.341
+T= 4096 L=18 k= 32: alive  2983 CV R2 0.339 rmse 0.349
+T= 4096 L=18 k= 64: alive  2983 CV R2 0.355 rmse 0.345
+T= 4096 L=18 k=128: alive  2983 CV R2 0.375 rmse 0.340
+T= 4096 L=24 k= 32: alive  2983 CV R2 0.315 rmse 0.355
+T= 4096 L=24 k= 64: alive  2983 CV R2 0.328 rmse 0.352
+T= 4096 L=24 k=128: alive  2983 CV R2 0.340 rmse 0.349
+wrote /user/wangzhiyao/projects/interp/submission/fragility/probe.npz: T=1536 L=18 k=128 CV R2 0.416

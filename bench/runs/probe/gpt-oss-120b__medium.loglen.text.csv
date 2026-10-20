@@ -1,0 +1,63 @@
+model_id,reasoning_effort,problem,is_robust,max_drop,pid,pred
+openai/gpt-oss-120b,medium,"The Fibonacci numbers are defined as follows: $F_0 = 0$, $F_1 = 1$, and $F_{n+1} = F_n + F_{n-1}$ for $n \geq 1$.
+There are $N$ positive integers $n$ strictly less than $10^{101}$ such that $n^2 + (n+1)^2$ is a multiple of 5
+but $F_{n-1}^2 + F_n^2$ is not. How many prime factors does $N$ have, counted with multiplicity?",1.0,-0.09,c394bacf,8.381642870625448
+openai/gpt-oss-120b,medium,Triangle $ABC$ has side length $AB = 20$ and circumradius $R = 26$. Let $D$ be the foot of the perpendicular from $C$ to the line $AB$. What is the greatest possible length of segment $CD$?,1.0,0.0,49981d06,8.183317054600666
+openai/gpt-oss-120b,medium,Find the sum of all integer bases $b>9$ for which $17_b$ is a divisor of $97_b.$,1.0,0.01,4bd31ff2,8.010386015928537
+openai/gpt-oss-120b,medium,"Find the three-digit number $n$ such that writing any other three-digit number $10^{2024}$ times in a row 
+and $10^{2024}+2$ times in a row results in two numbers divisible by $n$.",1.0,0.01,308a2b31,8.13257773511531
+openai/gpt-oss-120b,medium,"An isosceles trapezoid has an inscribed circle tangent to each of its four sides. The radius of the circle is $3$, and the area of the trapezoid is $72$. Let the parallel sides of the trapezoid have lengths $r$ and $s$, with $r \neq s$. Find $r^2+s^2$",1.0,0.01,1c053a12,8.22223097696278
+openai/gpt-oss-120b,medium,"Alice and Bob are each holding some integer number of sweets. Alice says to Bob: ``If we each added the number of sweets we're holding to our (positive integer) age, my answer would be double yours. If we took the product, then my answer would be four times yours.'' Bob replies: ``Why don't you give me five of your sweets because then both our sum and product would be equal.'' What is the product of Alice and Bob's ages?",1.0,0.01,4fb5cc7c,7.948591031501761
+openai/gpt-oss-120b,medium,"Alice writes all positive integers from $1$ to $n$ on the board for some positive integer $n \geq 11$. 
+Bob then erases ten of them. The mean of the remaining numbers is $3000/37$. 
+The sum of the numbers Bob erased is $S$. 
+What is the remainder when $n \times S$ is divided by $997$?",1.0,0.01,381c5826,8.367001622577405
+openai/gpt-oss-120b,medium,"Let $k$ be a real number such that the system
+\begin{align*} |25+20i-z|&=5\\ |z-4-k|&=|z-3i-k| \\ \end{align*}
+has exactly one complex solution $z$. The sum of all possible values of $k$ can be written as $\frac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$ Here $i=\sqrt{-1}.$",1.0,0.03,60bbea97,8.269157232337749
+openai/gpt-oss-120b,medium,"Define a function $f \colon \mathbb{Z}_{\geq 1} \to \mathbb{Z}_{\geq 1}$ by
+\begin{equation*}
+    f(n) = \sum_{i = 1}^n \sum_{j = 1}^n j^{445} \left\lfloor\frac1j + \frac{n-i}{n}\right\rfloor.
+\end{equation*}
+Let $M=2 \cdot 3 \cdot 5 \cdot 7 \cdot 11 \cdot 13$ and let $N = f{\left(M^{143}\right)} - f{\left(M^{143}-1\right)}$. Let $k$ be the largest non-negative integer such that $2^k$ divides $N$. What is the remainder when $2^k$ is divided by $22^4$?",1.0,0.09,3d78dd39,8.645776621414221
+openai/gpt-oss-120b,medium,"Let $\triangle ABC$ be a triangle with $D$ on $\overline{BC}$ such that $\overline{AD}$ bisects $\angle BAC.$ Let $\omega$ be the circle that passes through $A$ and is tangent to segment $\overline{BC}$ at $D.$ Let $E \neq A$ and $F \neq A$ be the intersections of $\omega$ with segments $\overline{AB}$ and $\overline{AC},$ respectively. Suppose that $AB = 200, AC = 225,$ and all of $AE, AF, BD,$ and $CD$ are positive integers. Find the sum of all possible values of $BC.$",1.0,0.1,9fc9278a,8.630618168632315
+openai/gpt-oss-120b,medium,"Let $S$ denote the value of the infinite sum
+\[
+\frac{1}{9} + \frac{1}{99} + \frac{1}{999} + \frac{1}{9999}  + \cdots
+\]
+Find the remainder when the greatest integer less than or equal to $10^{100} S$ is divided by $1000.$",,0.13,34f58ec1,8.292660759352085
+openai/gpt-oss-120b,medium,"Consider a tetrahedron with two isosceles triangle faces with side lengths $5\sqrt{10}, 5\sqrt{10},$ and $10$ and two isosceles triangle faces with side lengths $5\sqrt{10}, 5\sqrt{10},$ and $18.$ The four vertices of the tetrahedron lie on a sphere with center $S,$ and the four faces of the tetrahedron are tangent to a sphere with center $R.$ The distance $RS$ can be written as $\tfrac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m + n.$",,0.13,388d7602,8.446576435457764
+openai/gpt-oss-120b,medium,"The twelve letters $A$,$B$,$C$,$D$,$E$,$F$,$G$,$H$,$I$,$J$,$K$, and $L$ are randomly grouped into six pairs of letters. The two letters in each pair are placed next to each other in alphabetical order to form six two-letter words, and then those six words are listed alphabetically. For example, a possible result is $AB$, $CJ$, $DG$, $EK$, $FL$, $HI$. The probability that the last word listed contains $G$ is $\frac mn$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",,0.16,81984bde,8.322887613459523
+openai/gpt-oss-120b,medium,"Find the sum of all real numbers $r$ such that there is at least one point where the circle with radius $r$ centered at $(4, 39)$ is tangent to the parabola with equation $2y = x^2 - 8x + 12.$",,0.19,481b6519,8.190711510570598
+openai/gpt-oss-120b,medium,"The $27$ cells of a $3 \times 9$ grid are filled in using the numbers $1$ through $9$ so that each row contains $9$ different numbers, and each of the three $3 \times 3$ blocks heavily outlined in the example below contains $9$ different numbers, as in the first three rows of a Sudoku puzzle.
+
+\[
+\begin{array}{|c|c|c||c|c|c||c|c|c|}
+\hline
+4 & 2 & 8 & 9 & 6 & 3 & 1 & 7 & 5 \\
+\hline
+3 & 7 & 9 & 5 & 2 & 1 & 6 & 8 & 4 \\
+\hline
+5 & 6 & 1 & 8 & 4 & 7 & 9 & 2 & 3 \\
+\hline
+\end{array}
+\]
+The number of different ways to fill such a grid can be written as $p^a \cdot q^b \cdot r^c \cdot s^d$ where $p$, $q$, $r$, and $s$ are distinct prime numbers and $a$, $b$, $c$, $d$ are positive integers. Find $p \cdot a + q \cdot b + r \cdot c + s \cdot d$.",0.0,0.27,1d125ace,8.373812386628899
+openai/gpt-oss-120b,medium,"On a blackboard, Ken starts off by writing a positive integer $n$ and then applies the following move until he first reaches $1$. Given that the number on the board is $m$, he chooses a base $b$, where $2 \leq b \leq m$, and considers the unique base-$b$ representation of $m$,
+\begin{equation*}
+    m = \sum_{k = 0}^\infty a_k \cdot b^k
+\end{equation*}
+where $a_k$ are non-negative integers and $0 \leq a_k < b$ for each $k$. Ken then erases $m$ on the blackboard and replaces it with $\sum\limits_{k = 0}^\infty a_k$.
+
+Across all choices of $1 \leq n \leq 10^{10^5}$, the largest possible number of moves Ken could make is $M$. What is the remainder when $M$ is divided by $10^{4}$?",0.0,0.30000000000000004,39a92fc6,8.693713719939495
+openai/gpt-oss-120b,medium,"Let $f \colon \mathbb{Z}_{\geq 1} \to \mathbb{Z}_{\geq 1}$ be a function such that for all positive integers $m$ and $n$, 
+\begin{equation*}
+    f(m) + f(n) = f(m + n + mn).
+\end{equation*}
+Across all functions $f$ such that $f(n) \leq 1000$ for all $n \leq 1000$, how many different values can $f(2024)$ take?",0.0,0.36,941b97f2,8.431077871265495
+openai/gpt-oss-120b,medium,"Let $ABC$ be an acute-angled triangle with integer side lengths and $AB<AC$. Points $D$ and $E$ lie on segments $BC$ and $AC$, respectively, such that $AD=AE=AB$. Line $DE$ intersects $AB$ at $X$. Circles $BXD$ and $CED$ intersect for the second time at $Y \neq D$. Suppose that $Y$ lies on line $AD$. There is a unique such triangle with minimal perimeter. This triangle has side lengths $a=BC$, $b=CA$, and $c=AB$. Find the remainder when $abc$ is divided by $7^{2}$.",0.0,0.44,5cfc6d72,8.741310859368978
+openai/gpt-oss-120b,medium,"For integers $a$ and $b,$ let $a \circ b = a - b$ if $a$ is odd and $b$ is even, and $a+b$ otherwise. Find the number of sequences $a_1, a_2, a_3, \ldots, a_n$ of positive integers such that
+\[
+a_1 + a_2 + a_3 + \cdots + a_n = 12 \quad \text{and} \quad a_1 \circ a_2 \circ a_3 \circ \cdots \circ a_n = -8
+\]
+where the operations are performed from left to right; that is, $a_1 \circ a_2 \circ a_3$ means $(a_1 \circ a_2) \circ a_3.$",0.0,0.54,c902e678,8.766810145341113

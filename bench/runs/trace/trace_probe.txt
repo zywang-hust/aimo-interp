@@ -1,0 +1,40 @@
+80 rows / 33 problems, hard 36 rows / 20 problems
+loglen T4096: AUC all 0.859 hard 0.706
+base LOPO logit(loglen, w): acc all 0.775 hard 0.694
+feature                 AUC all  AUC hard  pAUC hard|len  +len,w acc hard
+ent_mean@512              0.649     0.621          0.583            0.639
+ent_mean@1024             0.636     0.630          0.602            0.639
+ent_mean@1536             0.615     0.646          0.643            0.667
+ent_mean@2048             0.614     0.637          0.633            0.667
+ent_mean@3072             0.629     0.659          0.630            0.667
+ent_mean@4096             0.590     0.659          0.643            0.667
+ent_std@512               0.646     0.665          0.627            0.583
+ent_std@1024              0.621     0.675          0.637            0.583
+ent_std@1536              0.598     0.652          0.649            0.583
+ent_std@2048              0.602     0.656          0.652            0.611
+ent_std@3072              0.649     0.700          0.640            0.611
+ent_std@4096              0.634     0.700          0.649            0.639
+logp_mean@512             0.341     0.398          0.424            0.639
+logp_mean@1024            0.371     0.373          0.414            0.639
+logp_mean@1536            0.368     0.354          0.383            0.639
+logp_mean@2048            0.381     0.367          0.367            0.667
+logp_mean@3072            0.372     0.351          0.341            0.667
+logp_mean@4096            0.405     0.341          0.363            0.667
+
+hidden-state probes (PCA4 + loglen + w, LOPO); null = hidden states permuted across problems (30 draws), labels / loglen / w kept
+no hidden state: hard acc 0.694 AUC 0.759
+t= 1024 L=12: hard acc 0.583 AUC 0.590 | null AUC median 0.671 p=0.90
+t= 1024 L=18: hard acc 0.611 AUC 0.638 | null AUC median 0.692 p=0.63
+t= 1024 L=24: hard acc 0.528 AUC 0.552 | null AUC median 0.673 p=0.93
+t= 1536 L=12: hard acc 0.611 AUC 0.644 | null AUC median 0.651 p=0.57
+t= 1536 L=18: hard acc 0.667 AUC 0.648 | null AUC median 0.676 p=0.63
+t= 1536 L=24: hard acc 0.556 AUC 0.613 | null AUC median 0.695 p=0.77
+t= 2048 L=12: hard acc 0.667 AUC 0.670 | null AUC median 0.689 p=0.60
+t= 2048 L=18: hard acc 0.611 AUC 0.654 | null AUC median 0.689 p=0.67
+t= 2048 L=24: hard acc 0.556 AUC 0.600 | null AUC median 0.651 p=0.73
+t= 3072 L=12: hard acc 0.722 AUC 0.778 | null AUC median 0.692 p=0.07
+t= 3072 L=18: hard acc 0.694 AUC 0.790 | null AUC median 0.659 p=0.00
+t= 3072 L=24: hard acc 0.750 AUC 0.787 | null AUC median 0.659 p=0.13
+t= 4096 L=12: hard acc 0.694 AUC 0.768 | null AUC median 0.667 p=0.13
+t= 4096 L=18: hard acc 0.694 AUC 0.762 | null AUC median 0.676 p=0.17
+t= 4096 L=24: hard acc 0.750 AUC 0.781 | null AUC median 0.660 p=0.07

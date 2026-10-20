@@ -1,0 +1,86 @@
+### openai/gpt-oss-120b 01:46:18
+[transformers] MXFP4 quantization requires the `kernels` package: `pip install kernels>=0.12.0`. We will default to dequantizing the model to bf16.
+Loading weights:   0%|          | 0/615 [00:00<?, ?it/s]Loading weights:   1%|          | 5/615 [00:01<02:30,  4.07it/s]Loading weights:   1%|          | 7/615 [00:01<02:32,  3.98it/s]Loading weights:   4%|▎         | 22/615 [00:02<00:46, 12.74it/s]Loading weights:   4%|▍         | 24/615 [00:03<01:19,  7.42it/s]Loading weights:   6%|▋         | 39/615 [00:03<00:43, 13.26it/s]Loading weights:   7%|▋         | 41/615 [00:04<00:47, 12.20it/s]Loading weights:   9%|▉         | 56/615 [00:04<00:27, 20.12it/s]Loading weights:  10%|▉         | 59/615 [00:04<00:29, 18.63it/s]Loading weights:  12%|█▏        | 73/615 [00:04<00:20, 26.29it/s]Loading weights:  13%|█▎        | 77/615 [00:05<00:33, 16.17it/s]Loading weights:  15%|█▍        | 90/615 [00:06<00:31, 16.88it/s]Loading weights:  20%|██        | 124/615 [00:06<00:12, 40.13it/s]Loading weights:  26%|██▌       | 158/615 [00:06<00:06, 67.45it/s]Loading weights:  31%|███       | 192/615 [00:06<00:04, 97.93it/s]Loading weights:  37%|███▋      | 226/615 [00:06<00:02, 129.92it/s]Loading weights:  42%|████▏     | 260/615 [00:06<00:02, 161.48it/s]Loading weights:  48%|████▊     | 294/615 [00:07<00:01, 190.71it/s]Loading weights:  53%|█████▎    | 328/615 [00:07<00:01, 216.32it/s]Loading weights:  59%|█████▉    | 362/615 [00:07<00:01, 236.45it/s]Loading weights:  64%|██████▍   | 396/615 [00:07<00:00, 253.70it/s]Loading weights:  70%|██████▉   | 430/615 [00:09<00:03, 49.72it/s] Loading weights:  73%|███████▎  | 451/615 [00:18<00:17,  9.60it/s]Loading weights:  76%|███████▌  | 466/615 [00:23<00:22,  6.61it/s]Loading weights:  78%|███████▊  | 481/615 [00:25<00:19,  6.98it/s]Loading weights:  80%|███████▉  | 489/615 [00:28<00:22,  5.56it/s]Loading weights:  81%|████████  | 498/615 [00:30<00:21,  5.53it/s]Loading weights:  82%|████████▏ | 502/615 [00:33<00:28,  3.93it/s]Loading weights:  84%|████████▎ | 515/615 [00:35<00:21,  4.66it/s]Loading weights:  84%|████████▍ | 518/615 [00:38<00:28,  3.37it/s]Loading weights:  87%|████████▋ | 532/615 [00:40<00:18,  4.41it/s]Loading weights:  87%|████████▋ | 534/615 [00:43<00:26,  3.01it/s]Loading weights:  89%|████████▉ | 549/615 [00:45<00:15,  4.25it/s]Loading weights:  90%|████████▉ | 551/615 [00:48<00:21,  2.92it/s]Loading weights:  92%|█████████▏| 566/615 [00:50<00:11,  4.21it/s]Loading weights:  92%|█████████▏| 568/615 [00:53<00:16,  2.87it/s]Loading weights:  95%|█████████▍| 583/615 [00:55<00:07,  4.21it/s]Loading weights:  95%|█████████▌| 585/615 [00:58<00:10,  2.87it/s]Loading weights:  98%|█████████▊| 600/615 [01:00<00:03,  4.19it/s]Loading weights:  98%|█████████▊| 602/615 [01:03<00:04,  2.84it/s]Loading weights: 100%|██████████| 615/615 [01:03<00:00,  9.70it/s]
+Some parameters are on the meta device because they were offloaded to the cpu.
+Traceback (most recent call last):
+  File "/user/wangzhiyao/projects/interp/engine/eval_check.py", line 62, in <module>
+    t = time.time(); r = model(input_ids=inp, attention_mask=attn); torch.cuda.synchronize()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/utils/generic.py", line 911, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/models/gpt_oss/modeling_gpt_oss.py", line 653, in forward
+    outputs: MoeModelOutputWithPast = self.model(
+                                      ^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/utils/generic.py", line 1040, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/models/gpt_oss/modeling_gpt_oss.py", line 494, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/models/gpt_oss/modeling_gpt_oss.py", line 390, in forward
+    hidden_states, _ = self.mlp(hidden_states)  # diff with llama: router scores
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/transformers/models/gpt_oss/modeling_gpt_oss.py", line 149, in forward
+    hidden_states = self.experts(hidden_states, router_indices, router_scores)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/accelerate/hooks.py", line 187, in new_forward
+    args, kwargs = module._hf_hook.pre_forward(module, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/accelerate/hooks.py", line 50, in wrapper
+    return wrapper._compiled_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1298, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/accelerate/hooks.py", line 378, in pre_forward
+    set_module_tensor_to_device(
+  File "/user/wangzhiyao/projects/interp/engine/.venv-eval/lib/python3.12/site-packages/accelerate/utils/modeling.py", line 343, in set_module_tensor_to_device
+    new_value = value.to(device, non_blocking=non_blocking)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.96 GiB. GPU 0 has a total capacity of 178.35 GiB of which 2.83 GiB is free. Including non-PyTorch memory, this process has 175.50 GiB memory in use. Of the allocated memory 156.04 GiB is allocated by PyTorch, and 18.71 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

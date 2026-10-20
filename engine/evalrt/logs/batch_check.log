@@ -1,0 +1,8 @@
+prompt lengths 156 736
+1. same prompt, single vs per-row: tokens identical True, len [-1, -1, -1, -1] vs [-1, -1, -1, -1]
+2. near-greedy, max_new 512, first departure from the row run alone (batch 4):
+   noise floor, same prompt batch 8: [185, 256, 185, 73]
+   mixed, rows of 4bd31ff2 (P=156): [72, 72, 276, 72]
+   mixed, rows of 403db665 (P=736): [143, 81, 41, 143]
+   lengths alone [-1, -1, -1, -1] [-1, -1, -1, -1] | mixed [-1, -1, -1, -1, -1, -1, -1, -1] | ms/step 31.7
+   text check, mixed row 4: "<|channel|>analysis<|message|>We need area of heptagon AFNBCEM. Points: A, F, N, B, C, E, M? Wait order: AFNBCEM. Let's list vertices in order: A -> F -> N -> B -> C -> E -> M -> back to A"

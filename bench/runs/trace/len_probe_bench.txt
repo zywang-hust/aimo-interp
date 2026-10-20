@@ -1,0 +1,20 @@
+80 rows / 33 problems, hard 36 rows; train traces: bench 5904; n=8, R=30
+T=  512 H L=12 alive 576 R2  0.320 | hard AUC est 0.523 vs capped 0.500 | hard acc(+.1w) est 0.533 vs capped 0.694
+T=  512 H L=18 alive 576 R2  0.390 | hard AUC est 0.584 vs capped 0.500 | hard acc(+.1w) est 0.605 vs capped 0.694
+T=  512 H L=24 alive 576 R2  0.338 | hard AUC est 0.603 vs capped 0.500 | hard acc(+.1w) est 0.646 vs capped 0.694
+T= 1024 H L=12 alive 561 R2  0.449 | hard AUC est 0.678 vs capped 0.500 | hard acc(+.1w) est 0.673 vs capped 0.694
+T= 1024 H L=18 alive 561 R2  0.423 | hard AUC est 0.668 vs capped 0.500 | hard acc(+.1w) est 0.669 vs capped 0.694
+T= 1024 H L=24 alive 561 R2  0.398 | hard AUC est 0.635 vs capped 0.500 | hard acc(+.1w) est 0.624 vs capped 0.694
+T= 1536 H L=12 alive 523 R2  0.459 | hard AUC est 0.719 vs capped 0.500 | hard acc(+.1w) est 0.753 vs capped 0.694
+T= 1536 H L=18 alive 523 R2  0.499 | hard AUC est 0.690 vs capped 0.500 | hard acc(+.1w) est 0.700 vs capped 0.694
+T= 1536 H L=24 alive 523 R2  0.427 | hard AUC est 0.692 vs capped 0.500 | hard acc(+.1w) est 0.694 vs capped 0.694
+T= 2048 H L=12 alive 452 R2  0.418 | hard AUC est 0.714 vs capped 0.588 | hard acc(+.1w) est 0.758 vs capped 0.691
+T= 2048 H L=18 alive 452 R2  0.408 | hard AUC est 0.679 vs capped 0.596 | hard acc(+.1w) est 0.749 vs capped 0.690
+T= 2048 H L=24 alive 452 R2  0.335 | hard AUC est 0.697 vs capped 0.613 | hard acc(+.1w) est 0.741 vs capped 0.688
+T= 3072 H L=12 alive 325 R2  0.474 | hard AUC est 0.710 vs capped 0.721 | hard acc(+.1w) est 0.744 vs capped 0.702
+T= 3072 H L=18 alive 325 R2  0.476 | hard AUC est 0.698 vs capped 0.714 | hard acc(+.1w) est 0.746 vs capped 0.737
+T= 3072 H L=24 alive 325 R2  0.459 | hard AUC est 0.694 vs capped 0.716 | hard acc(+.1w) est 0.745 vs capped 0.714
+T= 4096 H L=12 alive 220 R2  0.441 | hard AUC est 0.713 vs capped 0.705 | hard acc(+.1w) est 0.744 vs capped 0.746
+T= 4096 H L=18 alive 220 R2  0.486 | hard AUC est 0.712 vs capped 0.706 | hard acc(+.1w) est 0.759 vs capped 0.746
+T= 4096 H L=24 alive 220 R2  0.471 | hard AUC est 0.713 vs capped 0.704 | hard acc(+.1w) est 0.757 vs capped 0.758
+uncapped mean log len over all traces: hard AUC 0.710

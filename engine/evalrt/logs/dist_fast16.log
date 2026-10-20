@@ -1,0 +1,8 @@
+4fb5cc7c: P=223 steps 2816 71.4s (6.7s setup, 23.0 ms/step) | >2048 0.69 vs 0.75 | >3072 0.00 vs 0.12 | answers ['50', '50', '50', '50', '50', '50', '50', '50', '50', '50', '50', '50', '50', '50', '50', '50']
+c394bacf: P=255 steps 3072 74.2s (1.5s setup, 23.7 ms/step) | >2048 0.94 vs 0.94 | >3072 0.19 vs 0.25 | answers ['201', None, None, None, '201', None, '201', None, None, None, None, '201', None, '201', None, None]
+8dee9d73: P=220 steps 2560 56.5s (0.3s setup, 22.0 ms/step) | >2048 0.12 vs 0.19 | >3072 0.00 vs 0.00 | answers [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+49981d06: P=184 steps 3072 74.0s (0.4s setup, 23.9 ms/step) | >2048 0.81 vs 0.75 | >3072 0.31 vs 0.19 | answers [None, '50', '50', None, '50', None, '50', None, '50', None, '50', '50', None, '50', None, '50']
+481b6519: P=187 steps 3072 76.4s (0.4s setup, 24.7 ms/step) | >2048 0.62 vs 0.69 | >3072 0.25 vs 0.31 | answers [None, None, None, None, '50', None, None, '50', '9', None, '9', None, None, None, None, '50']
+1c053a12: P=206 steps 2560 58.7s (0.4s setup, 22.8 ms/step) | >2048 0.12 vs 0.00 | >3072 0.00 vs 0.00 | answers [None, None, '504', None, None, '504', '504', None, '504', '504', '504', '504', '504', None, '504', '504']
+60bbea97: P=240 steps 3072 76.8s (2.1s setup, 24.3 ms/step) | >2048 0.56 vs 0.62 | >3072 0.19 vs 0.06 | answers [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+381c5826: P=211 steps 3072 75.3s (0.4s setup, 24.4 ms/step) | >2048 1.00 vs 1.00 | >3072 0.69 vs 0.75 | answers ['902', None, None, None, None, None, '902', None, None, '902', None, None, None, None, None, None]

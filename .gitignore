@@ -1,0 +1,21 @@
+# environments and third-party
+engine/.venv/
+engine/.venv-eval/
+engine/evalrt/kernels-overlay/
+__pycache__/
+.ruff_cache/
+# downloaded, read-only
+data/
+ext/
+# large regenerable data (sampling outputs, features); results tables stay tracked
+bench/feats/
+bench/runs/*/out/
+bench/runs/*/inputs/
+bench/runs/trace/feats/
+bench/runs/*/logs/
+# build products, Codabench logs (each <id>/data_file is the submitted ZIP), host logs
+submission/dist/
+submission/logs/
+engine/logs/
+engine/run/
+.claude/

@@ -1,0 +1,21 @@
+ca873e52 P=167 v2 rollout: len [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] check {'tv': 0.0, 'dlogit': 1.344, 'moe_flags': 'decode'} fallback None
+   (c) below = v2 decoder with the default MoE flags, not HF eager
+sample 10: mean-of-16 cos vs (a): rollout feat 0.99809 | (b) v2 forced 0.99809 | (c) HF eager decode 0.99654 | (b) vs (c) 0.99592 | rollout feat vs (b) 1.00000
+   per-token cos vs (a): (b) min 0.7915 mean 0.97427 | (c) min 0.7796 mean 0.96949 | token norms 6364-8944
+   (b) 1.000 1.000 1.000 1.000 0.999 0.998 0.995 0.791 1.000 0.996 1.000 0.999 0.991 0.970 0.947 0.906
+   (c) 1.000 0.999 1.000 1.000 0.997 0.994 0.994 0.996 1.000 0.996 1.000 0.999 0.993 0.824 0.943 0.780
+   (c) below = v2 decoder with the default MoE flags, not HF eager
+sample 4: mean-of-16 cos vs (a): rollout feat 0.99851 | (b) v2 forced 0.99851 | (c) HF eager decode 0.99824 | (b) vs (c) 0.99893 | rollout feat vs (b) 1.00000
+   per-token cos vs (a): (b) min 0.7777 mean 0.98139 | (c) min 0.7798 mean 0.97798 | token norms 6586-9399
+   (b) 0.985 1.000 0.970 0.999 1.000 1.000 1.000 1.000 1.000 0.978 1.000 1.000 0.997 0.998 0.778 0.999
+   (c) 0.969 1.000 0.937 1.000 0.999 1.000 1.000 1.000 1.000 0.975 1.000 1.000 0.997 0.998 0.780 0.994
+   (c) below = v2 decoder with the default MoE flags, not HF eager
+sample 5: mean-of-16 cos vs (a): rollout feat 0.99869 | (b) v2 forced 0.99869 | (c) HF eager decode 0.99882 | (b) vs (c) 0.99966 | rollout feat vs (b) 1.00000
+   per-token cos vs (a): (b) min 0.7725 mean 0.98303 | (c) min 0.7772 mean 0.98445 | token norms 6120-8801
+   (b) 0.998 0.999 0.993 0.999 0.999 0.999 0.998 0.990 0.998 0.988 1.000 0.772 0.999 1.000 1.000 0.999
+   (c) 1.000 0.999 0.998 0.999 0.999 0.999 0.998 0.991 1.000 0.993 1.000 0.777 0.999 1.000 1.000 0.999
+   (c) below = v2 decoder with the default MoE flags, not HF eager
+sample 6: mean-of-16 cos vs (a): rollout feat 0.99995 | (b) v2 forced 0.99995 | (c) HF eager decode 0.99994 | (b) vs (c) 0.99995 | rollout feat vs (b) 1.00000
+   per-token cos vs (a): (b) min 0.9966 mean 0.99954 | (c) min 0.9967 mean 0.99960 | token norms 7211-9896
+   (b) 1.000 1.000 1.000 1.000 0.997 1.000 1.000 1.000 1.000 1.000 1.000 0.997 1.000 1.000 1.000 1.000
+   (c) 1.000 1.000 1.000 1.000 0.997 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 0.999 1.000 1.000

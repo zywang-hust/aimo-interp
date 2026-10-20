@@ -1,0 +1,3 @@
+config twin3072_v2.json with guard_s 0 v2
+case 0 ca873e52 Qwen/Qwen3.5-4B/default: rc 0 21.0s (job 21s) ['RESULT [true]']
+    [fragility] Qwen/Qwen3.5-4B/default: 1 problems, 0 spurious, 6.9s | skywork-or1-7b__default=[0.308] | rule=['reader'] | rollout loglen=None probe=None {"skipped": 1, "clock": "state"} answers=[] | times={"import": 14.0, "load:skywork-or1-7b": 5.3, "read:skywork-or1-7b__default": 0.9} | chars=128 digits=10 dollars=10 match=aime_2026 sim=0.865

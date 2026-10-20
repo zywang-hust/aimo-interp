@@ -1,0 +1,18 @@
+388d7602 P=266 stream 200 tokens, batch 4
+   HF batch 4 vs HF batch 1           |dlogit| max 6.367 mean-of-max 0.629  argmax differs at 2.000% of steps
+   fast batch 4 vs HF batch 1         |dlogit| max 6.227 mean-of-max 0.671  argmax differs at 2.000% of steps
+   fast default-MoE batch 4 vs HF b1  |dlogit| max 8.000 mean-of-max 0.658  argmax differs at 1.000% of steps
+   fast batch 1 vs HF batch 1         |dlogit| max 7.938 mean-of-max 0.740  argmax differs at 2.500% of steps
+   fast default-MoE batch 1 vs HF b1  |dlogit| max 7.508 mean-of-max 0.671  argmax differs at 2.500% of steps
+4bd31ff2 P=156 stream 200 tokens, batch 4
+   HF batch 4 vs HF batch 1           |dlogit| max 5.656 mean-of-max 0.671  argmax differs at 0.000% of steps
+   fast batch 4 vs HF batch 1         |dlogit| max 5.906 mean-of-max 0.727  argmax differs at 0.500% of steps
+   fast default-MoE batch 4 vs HF b1  |dlogit| max 5.938 mean-of-max 0.746  argmax differs at 1.000% of steps
+   fast batch 1 vs HF batch 1         |dlogit| max 5.875 mean-of-max 0.602  argmax differs at 1.000% of steps
+   fast default-MoE batch 1 vs HF b1  |dlogit| max 5.875 mean-of-max 0.691  argmax differs at 0.000% of steps
+8dee9d73 P=220 stream 200 tokens, batch 4
+   HF batch 4 vs HF batch 1           |dlogit| max 6.125 mean-of-max 0.847  argmax differs at 0.500% of steps
+   fast batch 4 vs HF batch 1         |dlogit| max 7.188 mean-of-max 0.842  argmax differs at 1.500% of steps
+   fast default-MoE batch 4 vs HF b1  |dlogit| max 9.562 mean-of-max 0.833  argmax differs at 0.500% of steps
+   fast batch 1 vs HF batch 1         |dlogit| max 7.711 mean-of-max 0.835  argmax differs at 1.500% of steps
+   fast default-MoE batch 1 vs HF b1  |dlogit| max 8.016 mean-of-max 0.871  argmax differs at 1.000% of steps

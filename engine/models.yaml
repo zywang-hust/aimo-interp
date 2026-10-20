@@ -1,0 +1,124 @@
+# Model registry for engine/serve.sh. serve.sh reads `path`, `context_length`, `server_args`,
+# `spec_args` (only for *-dflash keys) and `parallel` from here; everything else is documentation
+# for clients.
+#
+# Official sampling (all models): temperature=1.0, top_k=40, top_p=0.95, max 100k new tokens
+# incl. thinking. Every server is launched with `--sampling-defaults openai`, so a model's
+# generation_config.json (e.g. Olmo's temperature 0.6) is NEVER used as a default: what the request
+# sends is what is sampled. Send all three params on every request; top_k goes in the body as an
+# extra field (OpenAI python client: extra_body={"top_k": 40}).
+#
+# Prompt / answer format (decided by main, 2026-10-18): the official solve prompt
+# ext/baselines/prompts/solve.txt is sent as the SYSTEM message and the bare problem as the user
+# message, as in ext/baselines/scripts/encode.py and the organizers' trained-probe artifact:
+#   [{"role": "system", "content": <solve.txt>}, {"role": "user", "content": <problem>}]
+# solve.txt asks for a last line "ANSWER: <integer or NaN>". Parse the last "ANSWER:" line of the
+# final answer (`content`), fall back to the last \boxed{...}. finish_reason == "length" means the
+# response was truncated: record it. bench/scripts/sample.py (main's sampler) implements this.
+# How each template places the system message is noted per model below (checked with HF 5.13 and
+# SGLang: SGLang's prompt token ids equal HF apply_chat_template's for all models, except that HF
+# mis-tokenizes dsr1-qwen3-8b, see there). engine/client.py's \boxed user-suffix prompt is only
+# for smoke/throughput tests.
+#
+# All keys are served with a reasoning parser, so chat responses carry
+# `message.reasoning_content` (thinking) and `message.content` (answer). usage.completion_tokens
+# counts both.
+
+defaults:
+  context_length: 106496          # 100k new tokens + prompt headroom
+  sampling: {temperature: 1.0, top_p: 0.95, top_k: 40, max_tokens: 100000}
+
+models:
+  qwen3.5-4b:
+    path: /user/wangzhiyao/models/aimo/Qwen/Qwen3.5-4B
+    hf_id: Qwen/Qwen3.5-4B
+    arch: Qwen3_5ForConditionalGeneration (hybrid Gated-DeltaNet + full attention, VL wrapper; text-only use)
+    parallel: dp                  # one replica per GPU
+    context_length: 106496        # native 262144
+    reasoning_parser: qwen3
+    server_args: []
+    thinking: >
+      On by default: the chat template appends "<|im_start|>assistant\n<think>\n". Do not pass
+      enable_thinking=false. System message rendered as a normal <|im_start|>system turn.
+    stop: "<|im_end|> (eos). No generation_config.json shipped, nothing to override."
+  qwen3.5-4b-dflash:
+    base: qwen3.5-4b
+    drafter: /user/wangzhiyao/models/aimo/z-lab/Qwen3.5-4B-DFlash   # block_size 16
+    spec_args: [--speculative-algorithm, DFLASH,
+                --speculative-draft-model-path, /user/wangzhiyao/models/aimo/z-lab/Qwen3.5-4B-DFlash]
+
+  skywork-or1-7b:
+    path: /user/wangzhiyao/models/aimo/Skywork/Skywork-OR1-Math-7B
+    hf_id: Skywork/Skywork-OR1-Math-7B
+    arch: Qwen2ForCausalLM (DeepSeek-R1-Distill-Qwen-7B lineage)
+    parallel: dp
+    context_length: 106496        # native 131072
+    reasoning_parser: deepseek-r1
+    server_args: []
+    thinking: >
+      Always on: R1-distill template, generation prompt ends with "<｜Assistant｜><think>\n".
+      The system message is used as-is: "<｜begin▁of▁sentence｜>{system}<｜User｜>{problem}<｜Assistant｜><think>\n".
+    stop: "<｜end▁of▁sentence｜> (id 151643, eos in tokenizer and generation_config)."
+
+  olmo3-7b-think:
+    path: /user/wangzhiyao/models/aimo/allenai/Olmo-3-7B-Think
+    hf_id: allenai/Olmo-3-7B-Think
+    arch: Olmo3ForCausalLM (YaRN 8x from 8192)
+    parallel: dp
+    context_length: 65536         # max_position_embeddings=65536. 100k is NOT reachable for this model;
+                                  # prompt+output is capped at 64k, i.e. max_tokens <= 65536 - prompt.
+    reasoning_parser: deepseek-r1
+    server_args: []
+    thinking: >
+      Always on: template ends with "<|im_start|>assistant\n<think>". Our system message (solve.txt)
+      REPLACES the default "You are OLMo, a helpful function-calling AI assistant..." system prompt;
+      expected, it is what the official encode does. The template still appends
+      " You do not currently have access to any functions. <functions></functions>" to it.
+    stop: >
+      eos ids [100265 <|im_end|>, 100257 <|endoftext|>] from generation_config.json.
+      generation_config also has temperature=0.6 / max_new_tokens=32768: ignored here because of
+      --sampling-defaults openai; ALWAYS send temperature explicitly.
+
+  dsr1-qwen3-8b:
+    path: /user/wangzhiyao/models/aimo/deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+    hf_id: deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+    arch: Qwen3ForCausalLM (YaRN 4x from 32768 -> 131072)
+    parallel: dp
+    context_length: 106496
+    reasoning_parser: deepseek-r1
+    server_args: []
+    thinking: >
+      Always on. The template ends with "<｜Assistant｜>" (no forced <think>); the model emits
+      "<think>\n" itself. System message used as-is: "<｜begin▁of▁sentence｜>{system}<｜User｜>{problem}<｜Assistant｜>".
+    tokenizer_bug: >
+      transformers 5.13 (eval runtime) AND 5.19 load this tokenizer (tokenizer_class LlamaTokenizerFast)
+      as LlamaTokenizer with a Metaspace pre-tokenizer: every space/newline is dropped
+      ("You are a" -> ["You","are","ap",...]). SGLang tokenizes correctly (= tokenizer.json).
+      In HF code use PreTrainedTokenizerFast.from_pretrained(path) (or
+      AutoTokenizer.from_pretrained(path, tokenizer_type="qwen2")); verified identical to tokenizer.json.
+    stop: "<｜end▁of▁sentence｜> (eos). No generation_config.json shipped."
+
+  gpt-oss-120b:
+    path: /user/wangzhiyao/models/aimo/openai/gpt-oss-120b
+    hf_id: openai/gpt-oss-120b
+    arch: GptOssForCausalLM, MoE, MXFP4 experts (~61 GiB on disk)
+    parallel: tp                  # 1 GPU (fits easily) or TP2
+    context_length: 106496        # native 131072
+    reasoning_parser: gpt-oss
+    # FlashInfer's MXFP4-MoE autotune ran ~7.6 min per profile x 20 profiles (~2.5 h) at startup on
+    # B200; without it startup is ~4 min (default tactics; FlashInfer MXFP4 MoE kernel still used).
+    server_args: [--disable-flashinfer-autotune]
+    thinking: >
+      Harmony format via the shipped chat_template.jinja. reasoning_effort in {low, medium, high};
+      default medium. Pass it either as top-level `reasoning_effort` in the chat request, or as
+      chat_template_kwargs={"reasoning_effort": "high"}: SGLang moves the latter into the former and
+      renders "Reasoning: high" into the system block. Both verified to change the prompt tokens.
+      The template also renders "Current date: <today>" (strftime_now), as HF does. A system message
+      becomes the harmony DEVELOPER message ("# Instructions\n\n{system}"); the harmony system
+      block stays "You are ChatGPT...".
+    stop: "<|return|> / <|call|> (eos ids 200002, 199999, 200012 from generation_config.json)."
+  gpt-oss-120b-dflash:
+    base: gpt-oss-120b
+    drafter: /user/wangzhiyao/models/aimo/z-lab/gpt-oss-120b-DFlash   # block_size 10
+    spec_args: [--speculative-algorithm, DFLASH,
+                --speculative-draft-model-path, /user/wangzhiyao/models/aimo/z-lab/gpt-oss-120b-DFlash]

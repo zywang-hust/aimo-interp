@@ -1,0 +1,30 @@
+hook vs hidden_states[18]: max abs diff 0, vs [19] 7.36e+03
+rollout_fast len [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] steps 1537 ms/step 9.9 check {'tv': 0.0, 'dlogit': 1.344, 'moe_flags': 'decode'} fallback None
+sample 0: cos 0.99889, rel err 0.0472, norm 6538.9 | vs layer 17 0.9620, 19 0.9448 | probe 8.469 vs teacher-forced 8.475
+sample 1: cos 0.99994, rel err 0.0110, norm 7113.1 | vs layer 17 0.9644, 19 0.9447 | probe 8.568 vs teacher-forced 8.566
+sample 2: cos 0.99978, rel err 0.0209, norm 7093.3 | vs layer 17 0.9624, 19 0.9409 | probe 8.391 vs teacher-forced 8.395
+sample 3: cos 0.99991, rel err 0.0132, norm 7333.5 | vs layer 17 0.9675, 19 0.9523 | probe 8.418 vs teacher-forced 8.413
+sample 4: cos 0.99851, rel err 0.0556, norm 6791.8 | vs layer 17 0.9617, 19 0.9482 | probe 8.344 vs teacher-forced 8.344
+sample 5: cos 0.99869, rel err 0.0515, norm 6662.6 | vs layer 17 0.9499, 19 0.9377 | probe 8.478 vs teacher-forced 8.482
+sample 6: cos 0.99995, rel err 0.0099, norm 7113.2 | vs layer 17 0.9727, 19 0.9547 | probe 8.134 vs teacher-forced 8.132
+sample 7: cos 0.99988, rel err 0.0157, norm 7354.1 | vs layer 17 0.9655, 19 0.9453 | probe 8.409 vs teacher-forced 8.411
+sample 8: cos 0.99983, rel err 0.0184, norm 7637.2 | vs layer 17 0.9589, 19 0.9555 | probe 7.695 vs teacher-forced 7.694
+sample 9: cos 0.99984, rel err 0.0180, norm 7183.3 | vs layer 17 0.9718, 19 0.9501 | probe 8.217 vs teacher-forced 8.206
+sample 10: cos 0.99809, rel err 0.0618, norm 6545.8 | vs layer 17 0.9589, 19 0.9359 | probe 8.408 vs teacher-forced 8.454
+sample 11: cos 0.99990, rel err 0.0138, norm 7112.0 | vs layer 17 0.9687, 19 0.9547 | probe 7.644 vs teacher-forced 7.645
+12 unfinished samples: cos min 0.99809 mean 0.99943 | probe(feat) - probe(teacher-forced): max |d| 0.046, mean -0.004
+hook vs hidden_states[18]: max abs diff 0, vs [19] 7.39e+03
+rollout_fast len [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] steps 1537 ms/step 10.0 check {'tv': 0.0, 'dlogit': 1.742, 'moe_flags': 'decode'} fallback None
+sample 0: cos 0.99992, rel err 0.0129, norm 7598.2 | vs layer 17 0.9660, 19 0.9388 | probe 8.833 vs teacher-forced 8.836
+sample 1: cos 0.99985, rel err 0.0176, norm 7054.9 | vs layer 17 0.9596, 19 0.9505 | probe 8.912 vs teacher-forced 8.905
+sample 2: cos 0.99992, rel err 0.0133, norm 7369.7 | vs layer 17 0.9647, 19 0.9569 | probe 8.658 vs teacher-forced 8.658
+sample 3: cos 0.99988, rel err 0.0154, norm 7852.0 | vs layer 17 0.9616, 19 0.9487 | probe 8.387 vs teacher-forced 8.383
+sample 4: cos 0.99986, rel err 0.0167, norm 7446.1 | vs layer 17 0.9687, 19 0.9529 | probe 8.913 vs teacher-forced 8.916
+sample 5: cos 0.99956, rel err 0.0298, norm 7184.6 | vs layer 17 0.9592, 19 0.9492 | probe 9.230 vs teacher-forced 9.224
+sample 6: cos 0.99993, rel err 0.0122, norm 7361.3 | vs layer 17 0.9723, 19 0.9487 | probe 9.036 vs teacher-forced 9.037
+sample 7: cos 0.99993, rel err 0.0123, norm 7911.6 | vs layer 17 0.9671, 19 0.9544 | probe 8.985 vs teacher-forced 8.984
+sample 8: cos 0.99941, rel err 0.0344, norm 8046.6 | vs layer 17 0.9550, 19 0.9464 | probe 8.799 vs teacher-forced 8.803
+sample 9: cos 0.99989, rel err 0.0145, norm 7162.2 | vs layer 17 0.9609, 19 0.9549 | probe 8.556 vs teacher-forced 8.558
+sample 10: cos 0.99990, rel err 0.0143, norm 7098.7 | vs layer 17 0.9623, 19 0.9477 | probe 8.359 vs teacher-forced 8.359
+sample 11: cos 0.99972, rel err 0.0237, norm 7575.4 | vs layer 17 0.9678, 19 0.9494 | probe 8.506 vs teacher-forced 8.514
+12 unfinished samples: cos min 0.99941 mean 0.99981 | probe(feat) - probe(teacher-forced): max |d| 0.008, mean -0.000

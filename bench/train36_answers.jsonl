@@ -1,0 +1,36 @@
+{"id":"4fb5cc7c","answer":"50","answer_src":"official_exact","src":"aimo3","sim":1.0,"note":null}
+{"id":"c394bacf","answer":"201","answer_src":"official_exact","src":"aimo2","sim":1.0,"note":null}
+{"id":"1c053a12","answer":"504","answer_src":"official_exact","src":"aime_2025","sim":1.0,"note":null}
+{"id":"481b6519","answer":"50","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"1d125ace","answer":"81","answer_src":"official_exact","src":"aime_2025","sim":1.0,"note":null}
+{"id":"81984bde","answer":"821","answer_src":"official_exact","src":"aime_2025","sim":1.0,"note":null}
+{"id":"4bd31ff2","answer":"70","answer_src":"official_exact","src":"aime_2025","sim":1.0,"note":null}
+{"id":"60bbea97","answer":"77","answer_src":"official_exact","src":"aime_2025","sim":1.0,"note":null}
+{"id":"381c5826","answer":"902","answer_src":"official_exact","src":"aimo2","sim":1.0,"note":null}
+{"id":"9fc9278a","answer":"850","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"34f58ec1","answer":"669","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"3f23a5b7","answer":"70","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"61c8777b","answer":"277","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"dabe0ff4","answer":"441","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"388d7602","answer":"223","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"941b97f2","answer":"580","answer_src":"official_exact","src":"aimo3","sim":1.0,"note":null}
+{"id":"6e90d790","answer":"32951","answer_src":"official_exact","src":"aimo3","sim":1.0,"note":null}
+{"id":"308a2b31","answer":"143","answer_src":"official_exact","src":"aimo2","sim":1.0,"note":null}
+{"id":"bee4a132","answer":"245","answer_src":"official_exact","src":"aime_2026","sim":1.0,"note":null}
+{"id":"d9d2d944","answer":"588","answer_src":"official_exact","src":"aime_2025","sim":1.0,"note":null}
+{"id":"7a266023","answer":"751","answer_src":"official_exact","src":"aimo2","sim":1.0,"note":null}
+{"id":"f088e93b","answer":"32193","answer_src":"official_exact","src":"aimo3","sim":1.0,"note":null}
+{"id":"39a92fc6","answer":"2193","answer_src":"computed_twin","src":"aimo3","sim":0.999,"note":"only modulus changed 10^5->10^4"}
+{"id":"c902e678","answer":"16","answer_src":"computed_twin","src":"aime_2026","sim":0.997,"note":null}
+{"id":"5cfc6d72","answer":"42","answer_src":"computed_twin","src":"aimo3","sim":0.995,"note":"assumes original abc=336 (6,7,8); confirm with models"}
+{"id":"403db665","answer":"714","answer_src":"computed_twin","src":"aime_2025","sim":0.992,"note":"exact shoelace; earlier 2992/3 used a shortcut valid only for the original"}
+{"id":"79f835e1","answer":"1280","answer_src":"computed_twin","src":"aime_2026","sim":0.991,"note":null}
+{"id":"49981d06","answer":"50","answer_src":"computed_twin","src":"aimo2","sim":0.984,"note":null}
+{"id":"3d78dd39","answer":"145040","answer_src":"computed_twin","src":"aimo3","sim":0.98,"note":"sigma_e formula reproduces original 32951"}
+{"id":"8dee9d73","answer":"190","answer_src":"official_wording_twin","src":"aime_2026","sim":0.971,"note":null}
+{"id":"de9f9b5f","answer":"98","answer_src":"computed_twin","src":"aime_2026","sim":0.929,"note":null}
+{"id":"2a6c7e39","answer":"178","answer_src":"official_wording_twin","src":"aime_2026","sim":0.921,"note":null}
+{"id":"445fbf06","answer":"821","answer_src":"computed_twin","src":"aimo3","sim":0.918,"note":"brute force, method reproduces original 580"}
+{"id":"ca873e52","answer":"26244","answer_src":"computed_twin","src":"aime_2026","sim":0.865,"note":null}
+{"id":"67739591","answer":"81","answer_src":"computed_twin","src":"aime_2025","sim":0.861,"note":"only the example grid differs from AIME 2025 original"}
+{"id":"9bb61479","answer":"768","answer_src":"computed_twin","src":"aimo3","sim":0.68,"note":"sigma_e formula reproduces original 32951"}
